@@ -1,0 +1,25 @@
+The weights of the filters are initialized randomly and tuned during training
+via backpropagation. Note that the weights of a given filter are shared across the image, endowing
+the model with the ability to recognize a pattern regardless of its location in the image.
+
+The convolution-pooling block is expanded in Figure 2 for a filter of size 3,
+still using as an example an input of dimensionality (5,28,28). 64 filters are employed at the first level,
+and as the signal is subsampled through the pooling layer, the number of filters in the subsequent
+convolutional layer is increased to 96 to compensate for the loss in resolution.
+
+
+
+Procedure:
+1. Eead data
+2. For every input image, define a random adjacency matrix
+3. Take top 210 eigen values and form 5 2d frames of the graph consistent with the dimension of the input image
+4. Start writing generator and the descriminator components. 
+5. Generator will be a U-Net-like architecture: encoder + decoder. 
+6. Both encoder and decoder are CNNs with repeated convolution layers annd pooling layers
+7. CNNs using both the input image and the conditioned graph "image" as additional channel
+8. So in effect, there will be 3 channels for input image (r,g,b) and 5 channels of the graph (from 10 eigen vectors)
+9. Input data will be 8xhxw (where hxw is the size of the image)
+10. Local receptive field in the first hidden layer will be 8x3x3 
+11. Take many more feature maps in the first convolution layer. As this stack of feature map becomes channel for second level of convolution. Many more feature maps are required to compensate for the information loss
+12. Refer to the architecture diagram mentioned in "Classifying Graphs as Images with Convolutional Neural Networks" and the U-Net-like architecture
+

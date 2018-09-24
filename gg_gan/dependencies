@@ -1,0 +1,10 @@
+networkx -> "pip install networkx"
+matplotlib -> "sudo apt-get install python-matplotlib"
+numpy and scipy -> "sudo pip install numpy scipy"
+sklearn -> "pip install -U scikit-learn"
+pandas -> "sudo pip install pandas"
+
+pip install h5py
+pip install keras (version 2.0. Keras went through a major API change. Hence the project wont work with previous API)
+matplotlib
+tqdm
